@@ -1,0 +1,133 @@
+%!TEX TS-program = XeLaTeX
+%!TEX encoding = UTF-8 Unicode
+\documentclass[UTF8, 12pt, a4paper]{ctexart}
+\usepackage{amsmath, amssymb, graphicx, geometry, enumitem, booktabs}
+\usepackage[
+  unicode,
+  colorlinks=true,
+  bookmarksopen=true,
+  bookmarksnumbered=true,
+  hidelinks, 
+  pdftitle={sx_230422}, 
+  pdfauthor={梁樱祖}, 
+  pdfkeywords={抛物线,试题}]{hyperref}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0em}
+\renewcommand{\labelenumi}{Q\theenumi.}
+\newcommand \qref[1]{Q\ref{#1}}
+\geometry{left=3cm, right=3cm, top=3cm, bottom=3.25cm}
+\title{sx_230422}
+\author{梁樱祖}
+\date{2023-04-22}
+\pagestyle{plain}
+
+\begin{document}
+已知抛物线$\Gamma:y^2=4x$，$R\left(2,0 \right)$，直线$l:y=k_1\left(x-1 \right)$交$\Gamma$于$A\left(x_1,y_1 \right)$、$B\left(x_2,y_2 \right)$两点($y_1>0$)，直线$AR$、$BR$分别交$\Gamma$于另一点$C\left(x_3,y_3 \right)$、$D\left(x_4,y_4 \right)$，$AB$交$CD$于$T$，$AD$交$BC$于$S$.
+\begin{enumerate}[itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=0pt]
+\item 设$CD$斜率为$k_2$，求$k_1:k_2$.
+\item $CD$过定点$E$，求$E$点坐标.
+\item $AD$、$BC$分别与$l':x=2$交于$M$、$N$，求证：$\left|RM \right|=\left|RN \right|$.
+\item 求证：$S$、$T$在同一定直线$l_0$上.
+\item 当$\triangle ABC$面积最小时，求$x_1$.
+\item $AC$交$ST$于$G$，求证：$\left|GA \right|\left|RC \right|=\left|RA \right|\left|GC \right|$.
+\item 当$\triangle SRT$面积最小时，求$k_1$.
+\end{enumerate}
+
+\begin{enumerate}
+\item \label{q1}$\because A$、$B$、$F$三点共线，
+\begin{equation}
+    \therefore \dfrac{y_1}{x_1-1}=\dfrac{y_2}{x_2-1}\ \Rightarrow \ y_1y_2=-4\label{eq1}
+\end{equation}
+同理，由$A$、$C$、$R$和$B$、$D$、$R$三点共线，
+\begin{equation}
+    \Rightarrow\ y_1y_3=y_2y_4=-8\label{eq2}
+\end{equation}
+又因为
+\begin{equation}
+k_1=\dfrac{y_1-y_2}{x_1-x_2}=\dfrac{4\left(y_1-y_2 \right)}{y_1^2-y_2^2}=\dfrac{4}{y_1+y_2}\label{eq3}
+\end{equation}
+$\therefore$ 同理，
+\[k_2=\dfrac{4}{y_3+y_4}=\dfrac{4y_1y_2}{y_1y_3\cdot y_2+y_2y_4\cdot y_1}=\dfrac{1}{2}\cdot\dfrac{4}{y_1+y_2}=\dfrac{1}{2}k_1\]
+$\therefore\ k_1:k_2=2$.
+\item \label{q2}由\eqref{eq1}、\eqref{eq2}可得
+\begin{equation}
+y_3y_4=-16\label{eq4}
+\end{equation}
+$\because C\left(x_3,y_3 \right)$、$D\left(x_4,y_4 \right)$
+\begin{equation}
+\Rightarrow CD:4x-\left(y_3+y_4 \right)y+y_3y_4=0\label{eq5}
+\end{equation}
+$\therefore$由\eqref{eq4}，可得
+\begin{equation}
+CD:4x-\left(y_3+y_4 \right)y-16=0\label{eq6}
+\end{equation}
+$\therefore CD$过定点$E\left(4,0 \right)$.
+\item \label{q3}由\eqref{eq5},同理可得$AD:4x-\left(y_1+y_4 \right)y+y_1y_4=0$\par
+又由\eqref{eq1}、\eqref{eq2},可得
+\begin{equation}
+AD:y_2x+3y-2y_1=0\label{eq7}
+\end{equation}
+同理，
+\begin{equation}
+BC:y_1x+3y-2y_2=0\label{eq8}
+\end{equation}
+$\therefore$\eqref{eq7}、\eqref{eq8}分别与$l'$联立可得
+\[y_M=\dfrac{2}{3}(y_1-y_2),\ y_N=\dfrac{2}{3}(y_2-y_1)\]
+$\therefore\dfrac{\left|RM\right|}{\left|RN\right|}=\left|\dfrac{y_M}{y_N}\right|=1$，即$\left|RM \right|=\left|RN \right|$.
+\item \label{q4}联立\eqref{eq7}、\eqref{eq8}，可得
+\begin{equation}
+    \begin{cases}
+    x_S=\dfrac{2y_1-2y_2}{y_2-y_1}=-2\\[2mm]
+    y_S=\dfrac{2}{3}\left(y_1+y_2\right)
+    \end{cases}\label{eq9}
+\end{equation}
+由$l$、\qref{q1}、\eqref{eq6}，可得
+\begin{equation}
+    CD:k_1x-2y-4k_1=0\label{eq10}
+\end{equation}
+联立$l$、\eqref{eq10}，可得
+\begin{equation}
+    \begin{cases}
+    x_T=-2\\
+    y_T=-3k_1\label{eq11}
+    \end{cases}
+\end{equation}
+$\therefore S$、$T$在同一定直线$l_0:x=-2$上.
+\item \label{q5}设$\Gamma$的焦点为$F$，由\eqref{eq1}、\eqref{eq2}，则
+\begin{align*}
+    S_{\triangle ABC}&=S_{\triangle AFC}+S_{\triangle BFC}\\
+    &=\dfrac{y_1-y_2}{y_1}\cdot S_{\triangle AFC}\\
+    &=\dfrac{y_1-y_2}{y_1}\cdot\dfrac{y_1-y_3}{2}\\
+    &=\dfrac{1}{2}\left(y_1-y_2-y_3+\dfrac{y_2y_3}{y_1}\right)\\
+    &=\dfrac{1}{2}\left(y_1+\dfrac{12}{y_1}+\dfrac{32}{y_1^3}\right)\\
+    \Rightarrow S'_{\triangle ABC}&=\dfrac{1}{2y_1^4}\left(y_1^4-12y_1^2-96\right)\\
+    &=\dfrac{8}{y_1^4}\left(x_1^2-3x_1-6\right)
+\end{align*}
+$\therefore$令$S'_{\triangle ABC}=0$,则$x_1=\dfrac{3+\sqrt{33}}{2}$，\par
+$\therefore$易知$S_{\triangle ABC}$在$x_1\in\left(0,\dfrac{3+\sqrt{33}}{2} \right)\searrow$，在$x_1\in\left(\dfrac{3+\sqrt{33}}{2},+\infty \right)\nearrow$\par
+即$x_1=\dfrac{3+\sqrt{33}}{2}$时，$S_{\triangle ABC}$取最小值.
+\item \label{q6}由\qref{q4}，可得
+\begin{align*}
+&\left|GA \right|\left|RC \right|=\left|RA \right|\left|GC \right|\\
+\Leftrightarrow\quad&\dfrac{\left|GA \right|}{\left|GC \right|}=\dfrac{\left|RA \right|}{\left|RC \right|}\\
+\Leftrightarrow\quad&\left|\dfrac{x_1+2}{x_3+2} \right|=\left|\dfrac{x_1-2}{x_3-2} \right|\\
+\Leftrightarrow\quad&\left|x_1x_3+2x_1-2x_3-4 \right|=\left|x_1x_3-2x_1+2x_3-4 \right|
+\end{align*}
+又由\eqref{eq2}，得
+\begin{equation}
+    x_1x_3=\frac{y_1^2}{4}\cdot\frac{y_3^2}{4}=\frac{\left(y_1y_3 \right)^2}{16}=4
+\end{equation}
+$\therefore$原等式成立.
+\item \label{q7}由\eqref{eq3}、\eqref{eq9}、\eqref{eq11}，可得
+\[S\left(-2,\frac{8}{3k_1} \right),\ T\left(-2,-3k_1 \right)\]
+设$ST$交$x$轴于$H$，可得
+\begin{align*}
+S_{\triangle SRT}&=\frac{1}{2}\cdot\left|HR \right|\cdot\left|y_S-y_T \right|\\
+&=2\left|\frac{8}{3k_1}+3k_1 \right|\\
+&=2\left(\frac{8}{3\left|k_1\right|}+3\left|k_1\right| \right)\\
+&\ge 2\cdot2\sqrt{\frac{8}{3\left|k_1\right|}\cdot3\left|k_1\right|} \\
+&=8\sqrt{2}
+\end{align*}
+$\therefore$当且仅当$\dfrac{8}{3\left|k_1\right|}=3\left|k_1\right|$，即$k_1=\pm\dfrac{2\sqrt{2}}{3}$时，$S_{\triangle SRT}$取最小值$8\sqrt{2}$.
+\end{enumerate}
+\end{document}
